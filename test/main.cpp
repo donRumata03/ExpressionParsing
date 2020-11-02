@@ -6,15 +6,17 @@
 #include "encoding_test.h"
 #include "tree_tests.h"
 
+#ifdef WIN32
 #include <windows.h>
-
+#endif
 
 int main() {
 	// SetConsoleOutputCP(CP_UTF8);
 	// SetConsoleCP(CP_UTF8);
 
+#ifdef WIN32
 	system(("chcp "s + std::to_string(CP_UTF8)).c_str());
-
+#endif
 
 
 	/// Tree tests:

@@ -1,4 +1,13 @@
 cmake_minimum_required(VERSION 3.16)
+
+if (UNIX)
+    message("UNIX => Setting Compiler to gcc-10")
+    set(CMAKE_CXX_COMPILER "/usr/bin/g++-10")
+    set(CMAKE_C_COMPILER "/usr/bin/gcc-10")
+endif()
+
+
+
 project(Parsing_expressions)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -6,9 +15,6 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories(include)
 
 # find_package(OpenCV QUIET)
-
-# Скомпоновать исполняемый файл с библиотекой "GSL":
-# target_link_libraries(Parsing_expressions GSL::gsl)
 
 add_library(Expression_parsing_library
         include/expression_parsing.h

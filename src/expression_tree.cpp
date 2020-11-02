@@ -7,6 +7,8 @@
 #include <utility>
 #include <parse_utils.h>
 #include <set>
+#include <memory>
+#include <cmath>
 
 #include "tree_tokenizer.h"
 
