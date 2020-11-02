@@ -7,9 +7,6 @@ include_directories(include)
 
 # find_package(OpenCV QUIET)
 
-# Скомпоновать исполняемый файл с библиотекой "GSL":
-# target_link_libraries(Parsing_expressions GSL::gsl)
-
 add_library(Expression_parsing_library
         include/expression_parsing.h
         include/expression_particle.h
@@ -29,7 +26,15 @@ add_library(Expression_parsing_library
         src/validation.cpp
         src/parse_utils.cpp
 
-        src/expression_tree.cpp include/expression_tree.h include/flat_expression_tree.h src/flat_expression_tree.cpp src/tree_tokenizer.cpp include/tree_tokenizer.h include/_letter_utils.h)
+        src/expression_tree.cpp
+        include/expression_tree.h
+        include/flat_expression_tree.h
+        src/flat_expression_tree.cpp
+        src/tree_tokenizer.cpp
+        include/tree_tokenizer.h
+        include/_letter_utils.h
+
+        )
 
 add_executable(Parsing_expressions
 
