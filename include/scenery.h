@@ -1,5 +1,6 @@
 #pragma once
 
+#include <memory>
 #include "expression_particle.h"
 #include "parse_utils.h"
 #include "validator.h"
