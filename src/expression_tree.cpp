@@ -611,6 +611,12 @@ size_t expression_tree::count_operation_number () const
 	return res;
 }
 
+double expression_tree::count_collective_size () const
+{
+	return std::sqrt(double(count_node_number()) * double(count_operation_number()));
+}
+
+
 void expression_tree::reset_cache ()
 {
 	has_temp = false;

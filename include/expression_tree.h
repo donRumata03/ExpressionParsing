@@ -7,6 +7,7 @@
 #include "expr_token.h"
 #include <variant>
 #include <ostream>
+#include <chrono>
 
 
 struct expression_tree
@@ -55,9 +56,12 @@ struct expression_tree
 
 	void reset_cache();
 	[[nodiscard]] std::unordered_set<std::string> get_variables() const;
-	[[nodiscard]] size_t count_node_number() const;
 
+	[[nodiscard]] size_t count_node_number() const;
 	[[nodiscard]] size_t count_operation_number() const;
+	[[nodiscard]] double count_collective_size() const;
+	// TODO: [[nodiscard]] std::chrono::nanoseconds estimate_computation_time() const;
+	//  (Count really (what arguments to give?…) or just sum all operation times up (known from table ==> make table))
 
 	[[nodiscard]] expression_tree * generate_derivative_tree(const std::string& diff_variable_name);
 
