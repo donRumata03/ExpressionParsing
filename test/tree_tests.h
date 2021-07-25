@@ -363,7 +363,7 @@ inline void test_one_derivative(const std::string& expression, const std::unorde
 
 	double res = derivative_tree->compute(variable_values);
 
-	bool correct = (res == expected_result && res == 0) || abs((res - expected_result) / (res + expected_result)) < 0.001;
+	bool correct = (res == expected_result && res == 0) || std::abs((res - expected_result) / (res + expected_result)) < 0.001;
 
 
 	// RED : "\x1B[31m", "\033[0m"

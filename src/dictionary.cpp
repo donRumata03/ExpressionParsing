@@ -147,7 +147,7 @@ double compute_function(const operation_char& c, const std::vector<double>& args
 		return args[0] / args[1];
 
 	case operation_char::absation:
-		return abs(args[0]);
+		return std::abs(args[0]);
 	case operation_char::maxation:
 		return std::max(args[0], args[1]);
 	case operation_char::mination:
